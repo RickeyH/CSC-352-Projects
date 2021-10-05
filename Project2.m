@@ -21,3 +21,7 @@ sol2 = pinv(A)*Years;
 Qtb = Q.'*Years;
 invR = inv(R);
 sol3 = R\Qtb;
+%% Question 3
+%% Compute the condition number of A using the 2-norm
+k2 = norm(inv(A.'*A),2).*norm(A.'*A,2);
+%% Question 4
