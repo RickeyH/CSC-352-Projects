@@ -9,16 +9,15 @@ linearModel = polyfit(KVnum, Years, 1);
 %% First Create the design matrix
 A = [ones(1,10); KVnum.'; (KVnum.^3).'].';
 %% Part 1: Inverse of A^TA
-inver = inv(A.'*A)*A.';
-sol1 = inver*Years;
+inver = (inv(A.'*A));
+m1 = inver*A.';
+sol1 = m1*Years;
 %% Part 2: Pseudoinverse
 pseudoInver = pinv(A);
+invPseudo = pinv(A)/A.';
 sol2 = pinv(A)*Years;
 %% Part 3: QR Factorization
-[Q,R] = qr(A);
+[Q,R] = qr(A,0);
 Qtb = Q.'*Years;
+invR = inv(R);
 sol3 = R\Qtb;
-%% Analyzing part 1 and part 2
-inv = inv(A.'*A);
-Pinv = pinv(A)/A.';
-Rinv = inv(R);
