@@ -25,3 +25,10 @@ sol3 = R\Qtb;
 %% Compute the condition number of A using the 2-norm
 k2 = norm(inv(A.'*A),2).*norm(A.'*A,2);
 %% Question 4
+%% Using method 3
+%% Store the coefficients
+a = sol3(3,1);
+b = sol3(2,1);
+c = sol3(1,1) - 1810;
+%% Solve for the roots
+r = roots([a,b,c]);
