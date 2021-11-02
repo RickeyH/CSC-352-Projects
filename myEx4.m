@@ -1,5 +1,5 @@
-function myEx2(n)
-A=hilbert(n);
+function myEx4(n)
+A=frank(n);
 xKnown=ones(n,1);
 b=A*xKnown;
 xSolution=inv(A)*b;
