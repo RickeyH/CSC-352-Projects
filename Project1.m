@@ -27,9 +27,9 @@ Gk = u(:,1:k)*s(1:k,1:k)*v(:,1:k)';
 figure, imagesc(Gk),colormap(gray);
 axis image;
 % Compute the number of elements stored in the maatrices
-% Number of elements in matrix from the full picture
+% Number of elements in matrices from the full picture
 spaceFull = numel(s)+numel(u)+numel(v');
-% Number of elements in the matrix from the compressed image
-spacek = numel(s(1:k,1:k))+numel(u(:,1:k))+numel(v(:,1:k)');
+% Number of elements in the matrices from the compressed image
+spacek = 70+numel(u(:,1:k))+numel(v(:,1:k)');
 % Calculate the percent of space saved
 savedSpace = (spaceFull-spacek)./spaceFull;
